@@ -1,10 +1,31 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Console</title>
+        <link rel="stylesheet" href="styles.css">
+
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('command-input').focus();
+                    
+                document.body.addEventListener('click', function(event) {
+                        // Check if the click target is not the command input field
+                    if (event.target.id !== 'command-input') {
+                        // Set focus on the command input field
+                    document.getElementById('command-input').focus();
+                    }
+                });
+            });
+
+        </script>
+
     </head>
     <body>
-        <div id="console-output"></div>
+        <div class="crt">
+        <div id="console-output" class="console-output"></div>
         <input type="text" id="command-input" onkeydown="if (event.key === 'Enter') { executeCommand(); }">
         <script src="script.js"></script>
+        </div>
     </body>
     </html>

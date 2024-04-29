@@ -26,7 +26,11 @@ function processCommand(command) {
             break;
         // Add more cases to handle additional commands
         default:
-            consoleOutput.innerHTML += `<p>Command not recognized: ${command}</p>`;
+            consoleOutput.innerHTML += `<li>Command not recognized: ${command}</li>`;
             break;
     }
+
+        // Scroll to the bottom of the console output
+        consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        
 }
